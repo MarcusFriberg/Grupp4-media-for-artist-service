@@ -17,7 +17,7 @@ import java.util.List;
  * Created by Marcus Friberg on 2022-10-02.
  */
 @RestController
-@RequestMapping("/api/v1/")
+@RequestMapping("/")
 public class MediaController {
     // Properties
     private final MediaService mediaService;
@@ -35,7 +35,7 @@ public class MediaController {
         this.artistService = artistService;
     }
 
-    @GetMapping("/media")
+    @GetMapping("/artist")
     public List<Media> getMediaForArtist(@RequestBody Artist theArtist) {
         List<Media> allMediaForArtist = mediaService.findAllMediaForArtist(theArtist);
         return allMediaForArtist;
